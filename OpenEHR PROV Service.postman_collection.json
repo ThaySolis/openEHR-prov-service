@@ -1,0 +1,174 @@
+{
+	"info": {
+		"_postman_id": "4286f350-9320-4566-bbc6-f6765bf33fda",
+		"name": "OpenEHR PROV Service",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "API operations",
+			"item": [
+				{
+					"name": "Get PROV of Patient",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/provenance/service?target={{BASE_DEMOGRAPHIC_URL}}/v1/patient/11111111-1111-1111-1111-111111111111",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"provenance",
+								"service"
+							],
+							"query": [
+								{
+									"key": "target",
+									"value": "{{BASE_DEMOGRAPHIC_URL}}/v1/patient/11111111-1111-1111-1111-111111111111"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get PROV of EHR_STATUS",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/provenance/service?target={{BASE_OPENEHR_URL}}/v1/ehr/e718fef0-5adc-45f6-b509-5c48e8393bda/ehr_status",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"provenance",
+								"service"
+							],
+							"query": [
+								{
+									"key": "target",
+									"value": "{{BASE_OPENEHR_URL}}/v1/ehr/e718fef0-5adc-45f6-b509-5c48e8393bda/ehr_status"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get PROV of COMPOSITION",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/provenance/service?target={{BASE_OPENEHR_URL}}/v1/ehr/e718fef0-5adc-45f6-b509-5c48e8393bda/composition/56ac3cc9-bee9-4ceb-925d-0506ff72ff3a",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"provenance",
+								"service"
+							],
+							"query": [
+								{
+									"key": "target",
+									"value": "{{BASE_OPENEHR_URL}}/v1/ehr/e718fef0-5adc-45f6-b509-5c48e8393bda/composition/56ac3cc9-bee9-4ceb-925d-0506ff72ff3a"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "basic",
+				"basic": [
+					{
+						"key": "password",
+						"value": "prov_password",
+						"type": "string"
+					},
+					{
+						"key": "username",
+						"value": "prov_user",
+						"type": "string"
+					}
+				]
+			}
+		},
+		{
+			"name": "Usage statistics",
+			"item": [
+				{
+					"name": "Get usage statistics",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/usage_statistics",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"usage_statistics"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Clear usage statistics",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/usage_statistics",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"usage_statistics"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "BASE_URL",
+			"value": "https://127.0.0.1:12001"
+		},
+		{
+			"key": "BASE_DEMOGRAPHIC_URL",
+			"value": "https://127.0.0.1:12000"
+		},
+		{
+			"key": "BASE_OPENEHR_URL",
+			"value": "https://127.0.0.1:12000"
+		}
+	]
+}
